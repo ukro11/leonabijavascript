@@ -67,19 +67,6 @@ body {
     transition: .3s;
 }
 
-/*.s1_right > span::after {
-    position: absolute;
-    content: '';
-    width: 250px;
-    height: 300px;
-    background-color: var(--bl-3);
-    pointer-events: none;
-    top: 0;
-    right: 0;
-    transform: translateY(77px);
-    z-index: 100;
-}*/
-
 .s1_right > .s1_cart_btn > ion-icon {
     position: relative;
     font-size: 35px;
@@ -150,7 +137,8 @@ body {
 .s1_checkout_item > div:nth-child(1) > img {
     width: 80px;
     height: 80px;
-
+    user-select: none;
+    pointer-events: none;
 }
 
 .s1_checkout_item > div:nth-child(2) {
@@ -283,6 +271,8 @@ body {
     min-width: min(33.333333%, 180px);
 	max-width: 354px;
     background-color: #dbdbdb;
+    user-select: none;
+    pointer-events: none;
 }
 
 @media (max-width: 975px) {
