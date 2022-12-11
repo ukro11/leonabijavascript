@@ -21,10 +21,10 @@ function addProduct(pr) {
     s2_product_container.innerHTML += pr_html;
 }
 
-function addProductToWallet(pr) {
+function addProductToCart(pr) {
     const pr_html = `<div class="s1_checkout_item"><div><img src="./img/${pr.image}"></div><div><h3>${pr.title}</h3><h4>${pr.price}</h4></div><div><ion-icon name="close"></ion-icon></div></div>`
-    const wallet_items = document.querySelector('.s1_checkout_items');
-    wallet_items.innerHTML += pr_html;
+    const cart_items = document.querySelector('.s1_checkout_items');
+    cart_items.innerHTML += pr_html;
 }
 
 const registered_products = [
@@ -45,9 +45,8 @@ const products = document.querySelectorAll('.s2_pr');
 products.forEach(pr => {
     pr.addEventListener('click', () => {
         const index = Array.from(products).indexOf(pr);
-        console.log(index);
-        addProductToWallet(registered_products[index])
+        addProductToCart(registered_products[index])
     });
 });
 
-// TODO: Calculate Price, Remove Product from Wallet
+// TODO: Open/Close Cart, Calculate Price, Remove Product from Cart
