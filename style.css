@@ -83,7 +83,7 @@ body {
     width: var(--wi);
     height: 380px;
     background-color: #fff;
-    border: solid 2px var(--bla-1);
+    border: solid 2px #c7c7c7;
     z-index: 100;
     transform: translate(calc(55px - var(--wi) + 10px), 35px);
 }
@@ -97,7 +97,7 @@ body {
     right: 0;
 	border-left: 20px solid transparent;
 	border-right: 20px solid transparent;
-	border-bottom: 25px solid var(--bla-1);
+	border-bottom: 25px solid #c7c7c7;
     z-index: 200;
     transform: translate(-17px, -25px);
 }
@@ -167,6 +167,7 @@ body {
     padding-block: 0;
     text-overflow: ellipsis;
     color: rgb(190, 15, 15);
+    font-weight: 500;
 }
 
 .s1_checkout_item > div:nth-child(3) {
@@ -206,15 +207,19 @@ body {
     margin: 0;
     outline: 0;
     border: 0;
-    font-size: 18px;
+    font-size: 16px;
     font-family: var(--font);
     font-weight: 600;
     color: #fff;
     background-color: var(--bla-1);
-    border-radius: 10px;
     cursor: pointer;
     transition: .3s;
     transform: translate(15px, 0px);
+}
+
+.s1_right > .s1_checkout > button > ion-icon {
+    font-size: 20px;
+    margin-left: 5px;
 }
 
 .s1_right > .s1_checkout > button:hover {
@@ -311,8 +316,9 @@ body {
     padding-block: 0;
 	margin: 0;
 	font-size: 12px;
+    font-weight: 500;
     text-transform: uppercase;
-    color: var(--bla-1);
+    color: rgb(146, 146, 146);
     transform: translateY(3px);
 }
 
