@@ -46,19 +46,20 @@ function addProductToCart(pr, addedByStorage) {
     }
 }
 
-//localStorage.clear()
-
 function getProductFromStorage(val) {
     return registered_products.filter(pr => pr.title === val)[0];
 }
 
 registered_products.forEach(pr => addProduct(pr));
 
+const cart_btn = document.querySelector('.s1_cart_btn');
+const cart_container = document.querySelector('.s1_checkout');
 const products = document.querySelectorAll('.s2_pr');
 products.forEach(pr => {
     pr.addEventListener('click', () => {
         const index = Array.from(products).indexOf(pr);
         addProductToCart(registered_products[index], false);
+        cart_container.classList.toggle('hide', !cart_container.classList.contains('hide'))
     });
 });
 
@@ -67,8 +68,14 @@ if (localStorage.getItem('productsInCart') !== null) {
     saved_products.forEach(pr => addProductToCart(getProductFromStorage(pr), true));
 }
 
-const cart_btn = document.querySelector('.s1_cart_btn');
-const cart_container = document.querySelector('.s1_checkout');
 cart_btn.addEventListener('click', () => cart_container.classList.toggle('hide', !cart_container.classList.contains('hide')));
 
-// TODO: Open/Close Cart, Calculate Price, Remove Product from Cart
+window.addEventListener('keydown', (e) => {
+    console.log(e)
+    if (e.key === 'F4') {
+        alert('Local storage has been deleted!');
+        localStorage.clear();
+    }
+});
+
+// TODO: Calculate Price, Remove Product from Cart
