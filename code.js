@@ -20,7 +20,7 @@ const registered_products = [
     // iPhone 11
     new Product('iPhone 11', 'Apple', 'Refurbished iPhone 11 128 GB - Violett (ohne Vertrag)', '499,99€', 'iphone_11.png'),
     new Product('iPhone 11 Pro', 'Apple', 'Refurbished iPhone 11 Pro 64 GB - Space Grau (ohne Vertrag)', '699,99€', 'iphone_11_pro.png'),
-    new Product('iPhone 11 Pro Max', 'Apple', 'Refurbished iPhone 11 Pro Max 64 GB - Silber (ohne Vertrag)', '859,00€', 'iphone_11_pro_max.png'),
+    new Product('iPhone 11 Pro Max', 'Apple', 'Refurbished iPhone 11 Pro Max 64 GB - Silber (ohne Vertrag)', '859,99€', 'iphone_11_pro_max.png'),
     // iPhone 12
     new Product('iPhone 12 mini', 'Apple', 'Refurbished iPhone 12 mini 128 GB - Violett (ohne Vertrag)', '599,99€', 'iphone_12_mini.png'),
     new Product('iPhone 12', 'Apple', 'Refurbished iPhone 12 128 GB - Schwarz (ohne Vertrag)', '699,99€', 'iphone_12.png'),
@@ -66,5 +66,9 @@ if (localStorage.getItem('productsInCart') !== null) {
     const saved_products = localStorage.getItem('productsInCart').split(';');
     saved_products.forEach(pr => addProductToCart(getProductFromStorage(pr), true));
 }
+
+const cart_btn = document.querySelector('.s1_cart_btn');
+const cart_container = document.querySelector('.s1_checkout');
+cart_btn.addEventListener('click', () => cart_container.classList.toggle('hide', !cart_container.classList.contains('hide')));
 
 // TODO: Open/Close Cart, Calculate Price, Remove Product from Cart

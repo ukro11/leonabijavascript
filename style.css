@@ -85,7 +85,17 @@ body {
     background-color: #fff;
     border: solid 2px #c7c7c7;
     z-index: 100;
-    transform: translate(calc(55px - var(--wi) + 10px), 30px);
+    align-self: flex-start;
+    opacity: 1;
+    pointer-events: all;
+    transform: translate(calc(55px - var(--wi) + 10px), 30px) scaleY(1);
+    transition: opacity 0.3s;
+}
+
+.s1_right > .s1_checkout.hide {
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.3s;
 }
 
 .s1_right > .s1_checkout::after {
