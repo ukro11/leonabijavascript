@@ -59,7 +59,7 @@ products.forEach(pr => {
     pr.addEventListener('click', () => {
         const index = Array.from(products).indexOf(pr);
         addProductToCart(registered_products[index], false);
-        cart_container.classList.toggle('hide', !cart_container.classList.contains('hide'))
+        cart_container.classList.toggle('hide', false);
     });
 });
 
